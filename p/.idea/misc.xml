@@ -33,6 +33,7 @@
         <option value="$PROJECT_DIR$/arm/pom.xml" />
         <option value="$PROJECT_DIR$/arm-test/pom.xml" />
         <option value="$PROJECT_DIR$/arm-work/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
       </list>
     </option>
   </component>
