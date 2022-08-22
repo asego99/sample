@@ -116,22 +116,7 @@
       <recent name="com.xxx.mapper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test01.test06">
-    <configuration name="Test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="redis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xxx.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xxx.test" />
-      <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Test01.test07">
     <configuration name="Test01.test03" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="redis" />
       <extension name="coverage">
@@ -191,6 +176,22 @@
       <option name="PACKAGE_NAME" value="com.xxx.test" />
       <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
       <option name="METHOD_NAME" value="test06" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test01.test07" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
+      <option name="METHOD_NAME" value="test07" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -834,19 +835,19 @@
       <item itemvalue="Tomcat Server.ssm" />
       <item itemvalue="Tomcat Server.ssm-work" />
       <item itemvalue="Tomcat Server.springmvc-images" />
-      <item itemvalue="JUnit.Test01" />
       <item itemvalue="JUnit.Test01.test03" />
       <item itemvalue="JUnit.Test01.test04" />
       <item itemvalue="JUnit.Test01.test05" />
       <item itemvalue="JUnit.Test01.test06" />
+      <item itemvalue="JUnit.Test01.test07" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test01.test07" />
         <item itemvalue="JUnit.Test01.test06" />
         <item itemvalue="JUnit.Test01.test05" />
         <item itemvalue="JUnit.Test01.test04" />
         <item itemvalue="JUnit.Test01.test03" />
-        <item itemvalue="JUnit.Test01" />
       </list>
     </recent_temporary>
   </component>
@@ -895,7 +896,7 @@
       <workItem from="1660715847190" duration="416000" />
       <workItem from="1660723080139" duration="2300000" />
       <workItem from="1660732744174" duration="678000" />
-      <workItem from="1661129519494" duration="4782000" />
+      <workItem from="1661129519494" duration="9284000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1660728156677</created>
@@ -925,7 +926,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661131790474</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <created>1661134424223</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661134424223</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

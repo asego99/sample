@@ -6,13 +6,9 @@ import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.junit.Test;
 import org.springframework.util.SerializationUtils;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.Pipeline;
+import redis.clients.jedis.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Mr.Li
@@ -123,5 +119,22 @@ public class Test01 {
 
         long end = System.currentTimeMillis();
         System.out.println(end - start);
+    }
+
+    @Test
+    public void test07() {
+        Set<HostAndPort> nodes = new HashSet<HostAndPort>();//搞一个集合存储主机和端口对象
+        nodes.add(new HostAndPort("192.168.226.100",7001));
+        nodes.add(new HostAndPort("192.168.226.100",7002));
+        nodes.add(new HostAndPort("192.168.226.100",7003));
+        nodes.add(new HostAndPort("192.168.226.100",7004));
+        nodes.add(new HostAndPort("192.168.226.100",7005));
+        nodes.add(new HostAndPort("192.168.226.100",7006));
+
+        //主要创建JedisCluster集群对象,然后查看有参构造,缺啥补啥即可
+        JedisCluster jedisCluster = new JedisCluster(nodes);
+
+        String value = jedisCluster.get("a");//用集群对象来操作命令
+        System.out.println(value);//a
     }
 }
