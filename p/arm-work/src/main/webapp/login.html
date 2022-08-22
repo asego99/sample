@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/layui/layui.js"></script>
+    <script src="/layui/jquery-1.11.js"></script>
+</head>
+<body>
+<div class="layui-row" style="margin-top:10%">
+    <div class="layui-col-xs6 layui-col-md-offset2">
+        <form class="layui-form" action="dologin" method="post" layui-filter="login">
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" lay-verify="text" autocomplete="off" placeholder="请输入账号"
+                           class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="login" lay-filter="login">登陆</button>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    layui.use('form', function() {
+        var form = layui.form;
+        form.render(); //表单的渲染
+
+        //提交事件监听,点击登录按钮来到这里,去访问后台拿响应数据标记
+        form.on('submit(login)', function (data) {
+            $.ajax({
+                type:"post",
+                url:"/sys/doLogin",
+                data:data.field,
+                success:function (data) {
+                    alert("返回标记---"+data);//1成功,0失败
+                    if(data==1){//跳到首页location
+                        location.href="/account/toIndex";
+                    }else if(data==0){
+                        $("#msg").html("<font color='red'>登录失败</font>");
+                    }
+                }
+            })
+
+            return false; //阻止表单跳转,如果需要表单跳转,去掉这段即可
+        });
+    })
+</script>
+</body>
+</html>

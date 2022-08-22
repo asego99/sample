@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/arm" />
+    <file type="web" url="file://$PROJECT_DIR$/arm-test" />
+    <file type="web" url="file://$PROJECT_DIR$/arm-work" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-images" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvcday01-demo01-request" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvcday02-demo01-response" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm-work" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springday01-demo01-start/pom.xml" />
+        <option value="$PROJECT_DIR$/springday01-demo2-ioc/pom.xml" />
+        <option value="$PROJECT_DIR$/springday02-demo01-dbutils/pom.xml" />
+        <option value="$PROJECT_DIR$/springday03-demo1-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springday03-demo02-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springday03-demo02-aopxml/pom.xml" />
+        <option value="$PROJECT_DIR$/springday03-demo01-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/springday01-demo02-ioc/pom.xml" />
+        <option value="$PROJECT_DIR$/springday04-demo01-crud/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis01-demo01-crud/pom.xml" />
+        <option value="$PROJECT_DIR$/springday04-demo01-crud-work/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvcday01-demo01-request/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-images/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm-work/pom.xml" />
+        <option value="$PROJECT_DIR$/log/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/arm/pom.xml" />
+        <option value="$PROJECT_DIR$/arm-test/pom.xml" />
+        <option value="$PROJECT_DIR$/arm-work/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="PWA">
+    <option name="wasEnabledAtLeastOnce" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8.0_333" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

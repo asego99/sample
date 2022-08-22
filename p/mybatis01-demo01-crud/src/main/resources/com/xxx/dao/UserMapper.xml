@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.dao.UserMapper">
+    <insert id="add">
+        insert into user values(#{id},#{username},#{birthday},#{sex},#{address})
+
+        <selectKey keyColumn="id" keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+    <update id="update">
+        update user set username = #{username} where id = #{id}
+    </update>
+    <delete id="delete">
+        delete from user where id = #{id}
+    </delete>
+    <select id="findAll" resultType="com.xxx.bean.User">
+        select *
+        from user;
+    </select>
+    <select id="findUserName" resultType="com.xxx.bean.User">
+<!--        <bind name="likeUsername" value="'%'+username+'%'"/>-->
+        select * from user where username like concat("%",#{username},"%")
+    </select>
+    <select id="findUserByVo" resultType="com.xxx.bean.User">
+        select * from user where username = #{user.username}
+    </select>
+    <select id="findCount" resultType="java.lang.Integer">
+        select count(1) from user
+    </select>
+    <select id="testMoreWhere" resultType="com.xxx.bean.User">
+        select * from user where 1=1
+        <if test="id!=null and id!=''">
+            and id = #{id}
+        </if>
+        <if test="username!=null and username!=''">
+            and username like #{username}
+        </if>
+        <if test="address!=null and address!=''">
+            and address = #{address}
+        </if>
+    </select>
+    <select id="testMoreForeach" resultType="com.xxx.bean.User">
+        select * from user
+        <foreach collection="list" item="e" open="where id in (" close=")" separator=",">
+            #{e}
+        </foreach>
+    </select>
+    <resultMap id="userMap" type="user">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="sex" property="sex"></result>
+        <result column="address" property="address"></result>
+        <collection property="roles" ofType="role">
+            <id column="rid" property="id"></id>
+            <result column="role_name" property="roleName"></result>
+            <result column="role_desc" property="roleDesc"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findUsers" resultMap="userMap">
+        select u.*,r.id rid, r.role_name,r.role_desc from role r, user u , userrole ur where r.id=ur.rid and u.id= ur.uid
+    </select>
+
+<!--    <select id="findUserById" resultType="user">-->
+<!--        select * from user where id = #{uid}-->
+<!--    </select>-->
+
+<!--    <resultMap id="umap" type="user">-->
+<!--        <id column="id" property="id"/>-->
+<!--        <collection property="accounts" column="id" select="com.xxx.dao.AccountMapper.findAccountByUid"/>-->
+<!--    </resultMap>-->
+
+<!--    <select id="findUserByUsername" resultMap="umap">-->
+<!--        select *-->
+<!--        from user-->
+<!--        where user_name = #{username}-->
+<!--    </select>-->
+
+
+</mapper>

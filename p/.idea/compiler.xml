@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springday01-demo02-ioc" />
+        <module name="untitled" />
+        <module name="log" />
+        <module name="arm-work" />
+        <module name="mybatis01-demo01-crud" />
+        <module name="arm-test" />
+        <module name="springday03-demo02-aopxml" />
+        <module name="ssm" />
+        <module name="springmvc-images" />
+        <module name="springmvcday01-demo01-request" />
+        <module name="springday02-demo01-dbutils" />
+        <module name="ssm-work" />
+        <module name="springday04-demo01-crud" />
+        <module name="springday01-demo01-start" />
+        <module name="springday04-demo01-crud-work" />
+        <module name="springday03-demo01-aop" />
+        <module name="arm" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="arm" target="1.8" />
+      <module name="arm-test" target="1.8" />
+      <module name="arm-work" target="1.8" />
+      <module name="log" target="1.8" />
+      <module name="mybatis01-demo01-crud" target="1.8" />
+      <module name="springday01-demo01-start" target="1.8" />
+      <module name="springday01-demo02-ioc" target="1.8" />
+      <module name="springday01-demo2-ioc" target="1.8" />
+      <module name="springday02-demo01-dbutils" target="1.8" />
+      <module name="springday03-demo01-aop" target="1.8" />
+      <module name="springday03-demo02-aopxml" target="1.8" />
+      <module name="springday04-demo01-crud" target="1.8" />
+      <module name="springday04-demo01-crud-work" target="1.8" />
+      <module name="springmvc-images" target="1.8" />
+      <module name="springmvcday01-demo01-request" target="1.8" />
+      <module name="springmvcday02-demo01-response" target="1.8" />
+      <module name="ssm" target="1.8" />
+      <module name="ssm-work" target="1.8" />
+      <module name="untitled" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

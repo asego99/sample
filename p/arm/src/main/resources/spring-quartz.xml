@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       ">
+
+    <!-- 1.创建任务bean，指定任务名、组、加载job类 -->
+    <bean id="job" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="name" value="job1"></property>
+        <property name="group" value="group1"></property>
+        <property name="jobClass" value="com.xxx.job.SpringJob"></property>
+    </bean>
+
+    <!-- 2.创建触发器的bean，指定触发器名，组，绑定任务，触发规则 -->
+    <bean id="trigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="name" value="trigger2"></property>
+        <property name="group" value="group2"></property>
+        <property name="jobDetail" ref="job"></property>
+        <!--    每隔5秒执行一次定时任务    -->
+        <property name="cronExpression" value="*/5 * * * * ?"></property>
+    </bean>
+
+    <!-- 3.创建调度器： 注册trigger，引入配置文件 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="trigger"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>

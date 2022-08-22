@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/arm-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arm-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arm-work/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arm-work/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis01-demo01-crud/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis01-demo01-crud/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday01-demo01-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday01-demo01-start/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday01-demo02-ioc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday01-demo02-ioc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday02-demo01-dbutils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday02-demo01-dbutils/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday03-demo01-aop/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday03-demo01-aop/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday03-demo02-aopxml/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday03-demo02-aopxml/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday04-demo01-crud-work/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday04-demo01-crud-work/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday04-demo01-crud/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springday04-demo01-crud/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc-images/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc-images/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvcday01-demo01-request/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvcday01-demo01-request/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm-work/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm-work/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ssm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/untitled/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/untitled/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
