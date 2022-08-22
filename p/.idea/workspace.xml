@@ -10,21 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26ae297d-d5ed-407a-9a34-f05c154b11ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_18_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_18_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_18_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_18_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_18_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/src/main/java/com/xxx/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis/src/test/java/com/xxx/test/Test01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redis/src/test/java/com/xxx/test/Test01.java" beforeDir="false" afterPath="$PROJECT_DIR$/redis/src/test/java/com/xxx/test/Test01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +80,6 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -130,33 +116,7 @@
       <recent name="com.xxx.mapper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test01.test03">
-    <configuration name="HelloLog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xxx.log.HelloLog" />
-      <module name="log" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xxx.log.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HelloLog2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xxx.log.HelloLog2" />
-      <module name="log" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xxx.log.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Test01.test06">
     <configuration name="Test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="redis" />
       <extension name="coverage">
@@ -188,8 +148,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testFindUser5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis01-demo01-crud" />
+    <configuration name="Test01.test04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.xxx.test.*" />
@@ -197,8 +157,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.xxx.test" />
-      <option name="MAIN_CLASS_NAME" value="com.xxx.test.UserTest" />
-      <option name="METHOD_NAME" value="testFindUser5" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
+      <option name="METHOD_NAME" value="test04" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test01.test05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
+      <option name="METHOD_NAME" value="test05" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test01.test06" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxx.test" />
+      <option name="MAIN_CLASS_NAME" value="com.xxx.test.Test01" />
+      <option name="METHOD_NAME" value="test06" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -835,9 +827,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.HelloLog" />
-      <item itemvalue="Application.HelloLog2" />
-      <item itemvalue="JUnit.UserTest.testFindUser5" />
       <item itemvalue="Tomcat Server.arm" />
       <item itemvalue="Tomcat Server.springmvc" />
       <item itemvalue="Tomcat Server.arm-work" />
@@ -847,14 +836,17 @@
       <item itemvalue="Tomcat Server.springmvc-images" />
       <item itemvalue="JUnit.Test01" />
       <item itemvalue="JUnit.Test01.test03" />
+      <item itemvalue="JUnit.Test01.test04" />
+      <item itemvalue="JUnit.Test01.test05" />
+      <item itemvalue="JUnit.Test01.test06" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Test01.test06" />
+        <item itemvalue="JUnit.Test01.test05" />
+        <item itemvalue="JUnit.Test01.test04" />
         <item itemvalue="JUnit.Test01.test03" />
         <item itemvalue="JUnit.Test01" />
-        <item itemvalue="Application.HelloLog2" />
-        <item itemvalue="Application.HelloLog" />
-        <item itemvalue="JUnit.UserTest.testFindUser5" />
       </list>
     </recent_temporary>
   </component>
@@ -903,7 +895,7 @@
       <workItem from="1660715847190" duration="416000" />
       <workItem from="1660723080139" duration="2300000" />
       <workItem from="1660732744174" duration="678000" />
-      <workItem from="1661129519494" duration="2180000" />
+      <workItem from="1661129519494" duration="4782000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1660728156677</created>
@@ -926,7 +918,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661129919104</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1661131790474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661131790474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
