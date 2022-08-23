@@ -2,7 +2,6 @@ package com.xxx.test;
 
 import com.alibaba.fastjson.JSON;
 import com.xxx.bean.User;
-import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.junit.Test;
 import org.springframework.util.SerializationUtils;

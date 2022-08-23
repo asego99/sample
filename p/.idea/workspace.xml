@@ -828,6 +828,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.Test01.test03" />
+      <item itemvalue="JUnit.Test01.test04" />
+      <item itemvalue="JUnit.Test01.test05" />
+      <item itemvalue="JUnit.Test01.test06" />
+      <item itemvalue="JUnit.Test01.test07" />
       <item itemvalue="Tomcat Server.arm" />
       <item itemvalue="Tomcat Server.springmvc" />
       <item itemvalue="Tomcat Server.arm-work" />
@@ -835,11 +840,6 @@
       <item itemvalue="Tomcat Server.ssm" />
       <item itemvalue="Tomcat Server.ssm-work" />
       <item itemvalue="Tomcat Server.springmvc-images" />
-      <item itemvalue="JUnit.Test01.test03" />
-      <item itemvalue="JUnit.Test01.test04" />
-      <item itemvalue="JUnit.Test01.test05" />
-      <item itemvalue="JUnit.Test01.test06" />
-      <item itemvalue="JUnit.Test01.test07" />
     </list>
     <recent_temporary>
       <list>
@@ -896,7 +896,8 @@
       <workItem from="1660715847190" duration="416000" />
       <workItem from="1660723080139" duration="2300000" />
       <workItem from="1660732744174" duration="678000" />
-      <workItem from="1661129519494" duration="9284000" />
+      <workItem from="1661129519494" duration="9337000" />
+      <workItem from="1661232833631" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1660728156677</created>
@@ -933,7 +934,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661134424223</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1661170752415</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661170752417</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
