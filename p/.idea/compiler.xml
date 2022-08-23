@@ -16,6 +16,7 @@
         <module name="springday03-demo02-aopxml" />
         <module name="ssm" />
         <module name="redis" />
+        <module name="es" />
         <module name="springmvc-images" />
         <module name="springmvcday01-demo01-request" />
         <module name="springday02-demo01-dbutils" />
@@ -31,6 +32,7 @@
       <module name="arm" target="1.8" />
       <module name="arm-test" target="1.8" />
       <module name="arm-work" target="1.8" />
+      <module name="es" target="1.8" />
       <module name="log" target="1.8" />
       <module name="mybatis01-demo01-crud" target="1.8" />
       <module name="redis" target="1.8" />
