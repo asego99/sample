@@ -1,6 +1,5 @@
 package com.xxx.test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xxx.bean.Person;
 import com.xxx.utils.ESClient;
@@ -39,7 +38,7 @@ import java.util.Map;
  */
 public class Test01 {
 
-    RestHighLevelClient client = ESClient.getClient();
+    private RestHighLevelClient client = ESClient.getClient();
     String index = "person";
     String type = "man";
     ObjectMapper objectMapper = new ObjectMapper();
@@ -136,16 +135,47 @@ public class Test01 {
         Person p2 = new Person(2, "lbb", 24, new Date());
         Person p3 = new Person(3, "bb", 30, new Date());
 
-        objectMapper.writeValueAsString(p);
-        objectMapper.writeValueAsString(p2);
-        objectMapper.writeValueAsString(p3);
+        String json = objectMapper.writeValueAsString(p);
+        String json2 = objectMapper.writeValueAsString(p2);
+        String json3 = objectMapper.writeValueAsString(p3);
 
         BulkRequest request = new BulkRequest();
-        request.add(new IndexRequest(index, type, p.getId().toString()));
-        request.add(new IndexRequest(index, type, p2.getId().toString()));
-        request.add(new IndexRequest(index, type, p3.getId().toString()));
+        request.add(new IndexRequest(index, type, p.getId().toString()).source(json, XContentType.JSON));
+        request.add(new IndexRequest(index, type, p2.getId().toString()).source(json2, XContentType.JSON));
+        request.add(new IndexRequest(index, type, p3.getId().toString()).source(json3, XContentType.JSON));
 
         BulkResponse response = client.bulk(request, RequestOptions.DEFAULT);
-        System.out.println(request);
+        System.out.println(response.toString());
+    }
+
+    @Test
+    public void test08() throws IOException {
+        Map map = new HashMap();
+        map.put("name", "xxx");
+
+        Map map2 = new HashMap();
+        map2.put("name", "xxx2");
+
+        Map map3 = new HashMap();
+        map3.put("name", "xxx3");
+
+        BulkRequest request = new BulkRequest();
+        request.add(new UpdateRequest(index, type, "1").doc(map));
+        request.add(new UpdateRequest(index, type, "2").doc(map2));
+        request.add(new UpdateRequest(index, type, "3").doc(map3));
+
+        BulkResponse response = client.bulk(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+    }
+
+    @Test
+    public void test09() throws IOException {
+        BulkRequest request = new BulkRequest();
+        request.add(new DeleteRequest(index, type, "1"));
+        request.add(new DeleteRequest(index, type, "2"));
+        request.add(new DeleteRequest(index, type, "3"));
+
+        BulkResponse response = client.bulk(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
     }
 }
