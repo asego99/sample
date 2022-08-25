@@ -37,6 +37,7 @@
         <option value="$PROJECT_DIR$/es/pom.xml" />
         <option value="$PROJECT_DIR$/springboot1/pom.xml" />
         <option value="$PROJECT_DIR$/springboot2/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mysql-redis/springboot-mysql-mybatis/pom.xml" />
       </list>
     </option>
   </component>

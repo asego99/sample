@@ -10,6 +10,7 @@
         <module name="springday01-demo02-ioc" />
         <module name="untitled" />
         <module name="log" />
+        <module name="springboot-mysql-mybatis" />
         <module name="arm-work" />
         <module name="mybatis01-demo01-crud" />
         <module name="arm-test" />
@@ -38,6 +39,7 @@
       <module name="log" target="1.8" />
       <module name="mybatis01-demo01-crud" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="springboot-mysql-mybatis" target="1.8" />
       <module name="springboot1" target="1.8" />
       <module name="springboot2" target="1.8" />
       <module name="springday01-demo01-start" target="1.8" />
