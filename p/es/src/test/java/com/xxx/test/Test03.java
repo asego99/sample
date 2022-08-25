@@ -6,39 +6,33 @@ import com.xxx.utils.ESClient;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.action.search.*;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.common.text.Text;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.common.xcontent.json.JsonXContent;
+import org.elasticsearch.index.query.Operator;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.reindex.BulkByScrollResponse;
-import org.elasticsearch.index.reindex.DeleteByQueryRequest;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.range.Range;
+import org.elasticsearch.search.aggregations.metrics.cardinality.Cardinality;
+import org.elasticsearch.search.aggregations.metrics.stats.extended.ExtendedStats;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.sort.SortOrder;
+import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Date;
 
-/**
- * @author Mr.Li
- * @version 1.0
- * @ClassName Test02
- * @Description
- * @Date 2022-08-23 17:21
- */
-public class Test02 {
-
-    RestHighLevelClient client = ESClient.getClient();
-    String index = "sms-logs-index";
-    String type = "sms-logs-type";
+public class Test03 {
+    private RestHighLevelClient client = ESClient.getClient();
+    private String index = "sms-logs-index";
+    private String type = "sms-logs-type";
 
     @Test
     public void createSmsLogsIndex() throws IOException {
@@ -94,7 +88,7 @@ public class Test02 {
         //3. 添加索引.
         CreateIndexRequest request = new CreateIndexRequest(index);
         request.settings(settings);
-        request.mapping(type,mapping);
+        request.mapping(type, mapping);
         client.indices().create(request, RequestOptions.DEFAULT);
         System.out.println("OK!!");
     }
@@ -243,92 +237,181 @@ public class Test02 {
 
     @Test
     public void test01() throws IOException {
-//        SearchRequest request = new SearchRequest(index);
-//        request.types(type);
-//
-//        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-//        searchSourceBuilder.query(QueryBuilders.termQuery("province", "北京"));
-//        searchSourceBuilder.query(QueryBuilders.termsQuery("province", "北京", "山西"));
-//        searchSourceBuilder.query(QueryBuilders.matchAllQuery());
-//        searchSourceBuilder.from(0);//从0开始,可省略
-//        searchSourceBuilder.size(12);
-
-//        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "收货安装"));
-//        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康"));//默认是或者
-//        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康").operator(Operator.OR));
-//        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康").operator(Operator.AND));
-//        searchSourceBuilder.query(QueryBuilders.multiMatchQuery("北京", "province", "smsContent"));
-
-
-//        searchSourceBuilder.query(QueryBuilders.idsQuery().addIds("21", "22"));
-//        searchSourceBuilder.query(QueryBuilders.prefixQuery("corpName", "途虎"));
-//        searchSourceBuilder.query(QueryBuilders.fuzzyQuery("corpName", "河马鲜生"));
-//        searchSourceBuilder.query(QueryBuilders.fuzzyQuery("corpName", "河马鲜生").prefixLength(2));
-//        searchSourceBuilder.query(QueryBuilders.wildcardQuery("corpName", "中国*"));
-//        searchSourceBuilder.query(QueryBuilders.wildcardQuery("corpName", "中国??"));
-//        searchSourceBuilder.query(QueryBuilders.rangeQuery("fee").gt(5).lte(10));
-//        searchSourceBuilder.query(QueryBuilders.regexpQuery("mobile", "180[0-9]{8}"));
-
-//        searchSourceBuilder.query(QueryBuilders.boolQuery()
-//                .should(QueryBuilders.termQuery("province", "武汉"))
-//                .should(QueryBuilders.termQuery("province", "北京"))
-//                .mustNot(QueryBuilders.termQuery("operatorId", 2))
-//                .must(QueryBuilders.matchQuery("smsContent", "中国"))
-//                .must(QueryBuilders.matchQuery("smsContent", "平安"))
-//        );
-
-//        searchSourceBuilder.query(QueryBuilders.boolQuery()
-//                .filter(QueryBuilders.termQuery("corpName", "盒马鲜生"))
-//        );
-
-//        searchSourceBuilder.query(QueryBuilders.boostingQuery(
-//                QueryBuilders.matchQuery("smsContent", "收货安装"),
-//                QueryBuilders.matchQuery("smsContent", "王五")).negativeBoost(0.5f)
-//        );
-
-//        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "盒马"));
-//
-//        HighlightBuilder highlightBuilder = new HighlightBuilder();
-//        highlightBuilder.field("smsContent", 10).preTags("<font color='red'>").postTags("</font>");
-//
-//        searchSourceBuilder.highlighter(highlightBuilder);
-//
-//        request.source(searchSourceBuilder);
-//
-//        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
-//        System.out.println(response.toString());
-//
-//        SearchHit[] hits = response.getHits().getHits();
-//        for (SearchHit hit : hits) {
-////            System.out.println(hit.getSourceAsMap());
-//            Text text = hit.getHighlightFields().get("smsContent").getFragments()[0];
-//            System.out.println(text.toString());
-//        }
-
-        //聚合
-        SearchRequest request = new SearchRequest(index);
-        request.types(type);
+        SearchRequest request = new SearchRequest(index).types(type);
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //不分词
+//        searchSourceBuilder.query(QueryBuilders.termQuery("province", "北京"));
+//        searchSourceBuilder.query(QueryBuilders.termQuery("province", "山西"));
+        searchSourceBuilder.query(QueryBuilders.termsQuery("province", "北京", "山西"));
 
-//        searchSourceBuilder.aggregation(AggregationBuilders.cardinality("agg").field("province"));
-//        searchSourceBuilder.aggregation(AggregationBuilders.extendedStats("agg").field("fee"));
+        request.source(searchSourceBuilder);//alt+enter
+
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        SearchHit[] hits = response.getHits().getHits();
+        for (SearchHit hit : hits) {
+            System.out.println(hit.getSourceAsMap());
+        }
+    }
+
+    @Test
+    public void test02() throws IOException {
+        SearchRequest request = new SearchRequest(index).types(type);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //智能选择分不分词
+        searchSourceBuilder.query(QueryBuilders.matchAllQuery());
+        //分页
+        searchSourceBuilder.from(0);
+        searchSourceBuilder.size(12);
+
+        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "收货安装"));
+
+        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康"));//默认and
+        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康").operator(Operator.AND));
+        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "中国 健康").operator(Operator.OR));
+        //多个字段进行匹配
+        searchSourceBuilder.query(QueryBuilders.multiMatchQuery("北京", "province", "smsContent"));
+
+        request.source(searchSourceBuilder);//alt+enter
+
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        SearchHit[] hits = response.getHits().getHits();
+        for (SearchHit hit : hits) {
+            System.out.println(hit.getSourceAsMap());
+        }
+    }
+
+    @Test
+    public void test03() throws IOException {
+        SearchRequest request = new SearchRequest(index).types(type);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //其他查询
+        //id
+        searchSourceBuilder.query(QueryBuilders.idsQuery().addIds("21", "22"));
+        //前缀
+        searchSourceBuilder.query(QueryBuilders.prefixQuery("corpName", "途虎"));
+        //糊涂
+        searchSourceBuilder.query(QueryBuilders.fuzzyQuery("corpName", "盒马鲜生"));
+        searchSourceBuilder.query(QueryBuilders.fuzzyQuery("corpName", "盒马鲜生").prefixLength(2));//糊涂, 前两个字匹配查询
+        //wildcard:通配符   wild:野生,不受控
+        searchSourceBuilder.query(QueryBuilders.wildcardQuery("corpName", "中国*"));
+        searchSourceBuilder.query(QueryBuilders.wildcardQuery("corpName", "中国??"));
+        //范围
+        searchSourceBuilder.query(QueryBuilders.rangeQuery("fee").gt(5).lte(10));
+        //正则
+        searchSourceBuilder.query(QueryBuilders.regexpQuery("mobile", "180[0-9]{8}"));
+
+        request.source(searchSourceBuilder);//alt+enter
+
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        SearchHit[] hits = response.getHits().getHits();
+        for (SearchHit hit : hits) {
+            System.out.println(hit.getSourceAsMap());
+        }
+    }
+
+    @Test
+    public void test04() throws IOException {
+        SearchRequest request = new SearchRequest(index).types(type);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //复合查询
+        //bool
+        searchSourceBuilder.query(QueryBuilders.boolQuery()
+                .should(QueryBuilders.termQuery("province", "武汉"))
+                .should(QueryBuilders.termQuery("province", "北京"))
+                .mustNot(QueryBuilders.termQuery("operatorId", 2))
+                .must(QueryBuilders.matchQuery("smsContent", "中国"))
+                .must(QueryBuilders.matchQuery("smsContent", "平安"))
+        );
+        //bool查询之filter
+        searchSourceBuilder.query(QueryBuilders.boolQuery()
+                .filter(QueryBuilders.termQuery("corpName", "盒马鲜生"))
+        );
+        //boosting  boosting查询可以帮助我们去影响查询后的score
+        searchSourceBuilder.query(QueryBuilders.boostingQuery(
+                QueryBuilders.matchQuery("smsContent", "收货安装"),
+                QueryBuilders.matchQuery("smsContent", "王五")).negativeBoost(0.5f)
+        );
+
+
+        request.source(searchSourceBuilder);//alt+enter
+
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        SearchHit[] hits = response.getHits().getHits();
+        for (SearchHit hit : hits) {
+            System.out.println(hit.getSourceAsMap());
+        }
+    }
+
+    @Test
+    public void test05() throws IOException {
+        SearchRequest request = new SearchRequest(index).types(type);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //指定查询条件
+        searchSourceBuilder.query(QueryBuilders.matchQuery("smsContent", "盒马"));
+        //构建高亮域
+        HighlightBuilder highlightBuilder = new HighlightBuilder();
+        highlightBuilder.field("smsContent", 10)
+                .preTags("<font color='red'>")
+                .postTags("</font>");
+
+        searchSourceBuilder.highlighter(highlightBuilder);
+
+        request.source(searchSourceBuilder);//alt+enter
+
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+
+        SearchHit[] hits = response.getHits().getHits();
+        for (SearchHit hit : hits) {
+            System.out.println(hit.getSourceAsMap());
+            //fragment:片段
+            Text text = hit.getHighlightFields().get("smsContent").getFragments()[0];
+            System.out.println(text.toString());
+        }
+    }
+
+    //聚合↓
+
+    @Test
+    public void test06() throws IOException {
+        SearchRequest request = new SearchRequest(index).types(type);
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        //cardinality:基数
+        searchSourceBuilder.aggregation(AggregationBuilders.cardinality("agg").field("province"));
+        //extendedStats:扩展状态
+        searchSourceBuilder.aggregation(AggregationBuilders.extendedStats("agg").field("fee"));
+        //range:范围
         searchSourceBuilder.aggregation(AggregationBuilders.range("agg").field("fee").addUnboundedTo(5).addRange(5, 10).addUnboundedFrom(10));
 
         request.source(searchSourceBuilder);
 
         SearchResponse response = client.search(request, RequestOptions.DEFAULT);
         System.out.println(response.toString());
-
-//        Cardinality cardinality = response.getAggregations().get("agg");
-//        System.out.println(cardinality.getValue());
-
-//        ExtendedStats extendedStats = response.getAggregations().get("agg");
-//        System.out.println(extendedStats.getCount());
-//        System.out.println(extendedStats.getMin());
-//        System.out.println(extendedStats.getMax());
-//        System.out.println(extendedStats.getAvg());
-//        System.out.println(extendedStats.getSum());
+        //cardinality
+        Cardinality cardinality = response.getAggregations().get("agg");
+        System.out.println(cardinality.getValue());
+        //extendedStats
+        ExtendedStats extendedStats = response.getAggregations().get("agg");
+        System.out.println(extendedStats.getCount());
+        System.out.println(extendedStats.getMin());
+        System.out.println(extendedStats.getMax());
+        System.out.println(extendedStats.getAvg());
+        System.out.println(extendedStats.getSum());
+        //range
         Range range = response.getAggregations().get("agg");
         for (Range.Bucket bucket : range.getBuckets()) {
             System.out.println(bucket.getKey());
@@ -336,72 +419,6 @@ public class Test02 {
             System.out.println(bucket.getTo());
             System.out.println(bucket.getDocCount());
         }
-
     }
 
-    @Test
-    public void test02() throws IOException {
-        DeleteByQueryRequest request = new DeleteByQueryRequest(index);
-        request.types(type);
-
-        request.setQuery(QueryBuilders.rangeQuery("fee").lt(4));
-
-        BulkByScrollResponse response = client.deleteByQuery(request, RequestOptions.DEFAULT);
-        System.out.println(response.toString());
-
-    }
-
-    @Test
-    public void test03() throws IOException {
-        SearchRequest request = new SearchRequest(index);
-        request.types(type);
-
-        request.scroll(TimeValue.timeValueMillis(1L));
-
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-        searchSourceBuilder.query(QueryBuilders.matchAllQuery());
-        searchSourceBuilder.sort("fee", SortOrder.DESC);
-        searchSourceBuilder.size(4);
-
-        request.source(searchSourceBuilder);
-
-        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
-        System.out.println(request.toString());
-
-        SearchHit[] hits = response.getHits().getHits();
-        System.out.println("首页↓");
-        for (SearchHit hit : hits) {
-            System.out.println(hit.getSourceAsMap());
-        }
-
-        String scrollId = response.getScrollId();
-        System.out.println(scrollId);
-
-        //不断的拿
-        while (true) {
-            SearchScrollRequest request1 = new SearchScrollRequest(scrollId);
-            SearchResponse response1 = client.scroll(request1, RequestOptions.DEFAULT);
-            SearchHit[] hits1 = response1.getHits().getHits();
-
-            if (hits1 != null && hits1.length > 0) {
-                System.out.println("下一页↓");
-
-                for (SearchHit hit : hits1) {
-                    System.out.println(hit.getSourceAsMap());
-                }
-            } else {
-                System.out.println("结束↓");
-                break;
-            }
-        }
-
-        //清理滚动
-        ClearScrollRequest scrollRequest = new ClearScrollRequest();
-        scrollRequest.addScrollId(scrollId);
-
-        ClearScrollResponse scrollResponse = client.clearScroll(scrollRequest, RequestOptions.DEFAULT);
-        System.out.println(scrollResponse.toString());
-        System.out.println(scrollResponse.isSucceeded());
-
-    }
 }

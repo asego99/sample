@@ -35,6 +35,8 @@
         <option value="$PROJECT_DIR$/arm-work/pom.xml" />
         <option value="$PROJECT_DIR$/redis/pom.xml" />
         <option value="$PROJECT_DIR$/es/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot1/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot2/pom.xml" />
       </list>
     </option>
   </component>

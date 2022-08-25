@@ -17,7 +17,9 @@
         <module name="ssm" />
         <module name="redis" />
         <module name="es" />
+        <module name="springboot1" />
         <module name="springmvc-images" />
+        <module name="springboot2" />
         <module name="springmvcday01-demo01-request" />
         <module name="springday02-demo01-dbutils" />
         <module name="ssm-work" />
@@ -36,6 +38,8 @@
       <module name="log" target="1.8" />
       <module name="mybatis01-demo01-crud" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="springboot1" target="1.8" />
+      <module name="springboot2" target="1.8" />
       <module name="springday01-demo01-start" target="1.8" />
       <module name="springday01-demo02-ioc" target="1.8" />
       <module name="springday01-demo2-ioc" target="1.8" />
@@ -51,5 +55,11 @@
       <module name="ssm-work" target="1.8" />
       <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot1" options="-parameters" />
+      <module name="springboot2" options="" />
+    </option>
   </component>
 </project>

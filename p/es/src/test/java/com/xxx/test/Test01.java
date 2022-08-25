@@ -37,49 +37,49 @@ import java.util.Map;
  * @Date 2022-08-23 13:48
  */
 public class Test01 {
-
+    //创建客户端
     private RestHighLevelClient client = ESClient.getClient();
-    String index = "person";
-    String type = "man";
-    ObjectMapper objectMapper = new ObjectMapper();
+    private String index = "person";//索引
+    private String type = "man";//类型
+
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
     public void test01() throws IOException {
         //创建索引并制定settings和mappings结构,搞结构
-        CreateIndexRequest request = new CreateIndexRequest(index);
-
-        //settings.
-        Settings.Builder settings = Settings.builder().put("number_of_shards", 5).put("number_of_replicas", 1);//.var
+        CreateIndexRequest request = new CreateIndexRequest();
+        //setting
+        Settings.Builder settings = Settings.builder().put("number_of_shards", 5).put("number_of_replicas", 1);
         request.settings(settings);
 
-        //json.
+        //json
         XContentBuilder mappings = JsonXContent.contentBuilder()
-            .startObject()
+                .startObject()
                 .startObject("properties")
-                    .startObject("name")
-                        .field("type", "text")
-                        .field("analyzer", "ik_max_word")
-                    .endObject()
-                    .startObject("age")
-                        .field("type", "integer")
-                    .endObject()
-                    .startObject("birthday")
-                        .field("type", "date")
-                        .field("format", "yyyy-MM-dd")
-                    .endObject()
+                .startObject("name")
+                .field("type", "text")
+                .field("analyzer", "ik_max_word")
                 .endObject()
-            .endObject();
-
+                .startObject("age")
+                .field("type", "integer")
+                .endObject()
+                .startObject("birthday")
+                .field("type", "date")
+                .field("format", "yyyy-MM-dd")
+                .endObject()
+                .endObject()
+                .endObject();
+        //mapping
         request.mapping(type, mappings);
 
-        CreateIndexResponse response = client.indices().create(request, RequestOptions.DEFAULT);//重点代码,alt enter,缺啥补啥
+        CreateIndexResponse response = client.indices().create(request, RequestOptions.DEFAULT);
         System.out.println(response.toString());
     }
 
     @Test
     public void test02() throws IOException {
         GetIndexRequest request = new GetIndexRequest();
-        request.indices(index);
+        request.indices(index);//提交请求,绑定索引
 
         boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);
         System.out.println(exists);
@@ -87,21 +87,21 @@ public class Test01 {
 
     @Test
     public void test03() throws IOException {
-        DeleteIndexRequest request = new DeleteIndexRequest(index);
+        DeleteIndexRequest request = new DeleteIndexRequest(index);//删除对应索引
 
         AcknowledgedResponse response = client.indices().delete(request, RequestOptions.DEFAULT);
         System.out.println(response.toString());
-        System.out.println(response.isAcknowledged());
     }
 
     @Test
     public void test04() throws IOException {
         Person person = new Person(1, "fbb", 18, new Date());
-        ObjectMapper objectMapper = new ObjectMapper();
+        //将对象变为json样式字符串
+//        String json = new ObjectMapper().writeValueAsString(person);
         String json = objectMapper.writeValueAsString(person);
-        System.out.println(json);
 
-        IndexRequest request = new IndexRequest(index, type, person.getId().toString());
+        IndexRequest request = new IndexRequest(index, type, json);
+        //提交json请求
         request.source(json, XContentType.JSON);
 
         IndexResponse response = client.index(request, RequestOptions.DEFAULT);
@@ -111,13 +111,13 @@ public class Test01 {
     @Test
     public void test05() throws IOException {
         UpdateRequest request = new UpdateRequest(index, type, "1");
-
+        //map集合存储修改的属性
         Map map = new HashMap();
         map.put("name", "gd");
         request.doc(map);
 
         UpdateResponse response = client.update(request, RequestOptions.DEFAULT);
-        System.out.println(request);
+        System.out.println(response.toString());
     }
 
     @Test
@@ -125,12 +125,13 @@ public class Test01 {
         DeleteRequest request = new DeleteRequest(index, type, "1");
 
         DeleteResponse response = client.delete(request, RequestOptions.DEFAULT);
-        System.out.println(response);
+        System.out.println(response.toString());
     }
+
+    //批量操作↓
 
     @Test
     public void test07() throws IOException {
-
         Person p = new Person(1, "fbb", 18, new Date());
         Person p2 = new Person(2, "lbb", 24, new Date());
         Person p3 = new Person(3, "bb", 30, new Date());
@@ -144,6 +145,7 @@ public class Test01 {
         request.add(new IndexRequest(index, type, p2.getId().toString()).source(json2, XContentType.JSON));
         request.add(new IndexRequest(index, type, p3.getId().toString()).source(json3, XContentType.JSON));
 
+        //bulk:批量
         BulkResponse response = client.bulk(request, RequestOptions.DEFAULT);
         System.out.println(response.toString());
     }

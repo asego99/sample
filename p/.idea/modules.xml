@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/log/log.iml" filepath="$PROJECT_DIR$/log/log.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis01-demo01-crud/mybatis01-demo01-crud.iml" filepath="$PROJECT_DIR$/mybatis01-demo01-crud/mybatis01-demo01-crud.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot1/springboot1.iml" filepath="$PROJECT_DIR$/springboot1/springboot1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot2/springboot2.iml" filepath="$PROJECT_DIR$/springboot2/springboot2.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday01-demo01-start/springday01-demo01-start.iml" filepath="$PROJECT_DIR$/springday01-demo01-start/springday01-demo01-start.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday01-demo02-ioc/springday01-demo02-ioc.iml" filepath="$PROJECT_DIR$/springday01-demo02-ioc/springday01-demo02-ioc.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday02-demo01-dbutils/springday02-demo01-dbutils.iml" filepath="$PROJECT_DIR$/springday02-demo01-dbutils/springday02-demo01-dbutils.iml" />
