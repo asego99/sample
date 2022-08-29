@@ -38,6 +38,10 @@
         <option value="$PROJECT_DIR$/springboot1/pom.xml" />
         <option value="$PROJECT_DIR$/springboot2/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-mysql-redis/springboot-mysql-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-parent/eureka-server/pom.xml" />
       </list>
     </option>
   </component>

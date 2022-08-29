@@ -8,27 +8,34 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springday01-demo02-ioc" />
-        <module name="untitled" />
         <module name="log" />
         <module name="springboot-mysql-mybatis" />
+        <module name="springday03-demo02-aopxml" />
+        <module name="ssm" />
+        <module name="eureka-server" />
+        <module name="redis" />
+        <module name="springboot" />
+        <module name="springmvc-images" />
+        <module name="springmvcday01-demo01-request" />
+        <module name="ssm-work" />
+        <module name="springday04-demo01-crud" />
+        <module name="user-provide" />
+        <module name="springday01-demo01-start" />
+        <module name="springboot-mq" />
+        <module name="arm" />
+        <module name="untitled" />
         <module name="arm-work" />
         <module name="mybatis01-demo01-crud" />
         <module name="arm-test" />
-        <module name="springday03-demo02-aopxml" />
-        <module name="ssm" />
-        <module name="redis" />
+        <module name="rabbitmq" />
         <module name="es" />
         <module name="springboot1" />
-        <module name="springmvc-images" />
         <module name="springboot2" />
-        <module name="springmvcday01-demo01-request" />
         <module name="springday02-demo01-dbutils" />
-        <module name="ssm-work" />
-        <module name="springday04-demo01-crud" />
-        <module name="springday01-demo01-start" />
+        <module name="user-consumer" />
         <module name="springday04-demo01-crud-work" />
+        <module name="user-provide2" />
         <module name="springday03-demo01-aop" />
-        <module name="arm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,12 +43,17 @@
       <module name="arm-test" target="1.8" />
       <module name="arm-work" target="1.8" />
       <module name="es" target="1.8" />
+      <module name="eureka-server" target="1.8" />
       <module name="log" target="1.8" />
       <module name="mybatis01-demo01-crud" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
+      <module name="springboot" target="1.8" />
+      <module name="springboot-mq" target="1.8" />
       <module name="springboot-mysql-mybatis" target="1.8" />
       <module name="springboot1" target="1.8" />
       <module name="springboot2" target="1.8" />
+      <module name="springcloud-parent" target="1.8" />
       <module name="springday01-demo01-start" target="1.8" />
       <module name="springday01-demo02-ioc" target="1.8" />
       <module name="springday01-demo2-ioc" target="1.8" />
@@ -56,12 +68,20 @@
       <module name="ssm" target="1.8" />
       <module name="ssm-work" target="1.8" />
       <module name="untitled" target="1.8" />
+      <module name="user-consumer" target="1.8" />
+      <module name="user-provide" target="1.8" />
+      <module name="user-provide2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-server" options="-parameters" />
       <module name="springboot1" options="-parameters" />
       <module name="springboot2" options="" />
+      <module name="springcloud-parent" options="-parameters" />
+      <module name="user-consumer" options="-parameters" />
+      <module name="user-provide" options="-parameters" />
+      <module name="user-provide2" options="-parameters" />
     </option>
   </component>
 </project>

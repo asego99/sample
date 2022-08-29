@@ -6,13 +6,17 @@
       <module fileurl="file://$PROJECT_DIR$/arm-test/arm-test.iml" filepath="$PROJECT_DIR$/arm-test/arm-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/arm-work/arm-work.iml" filepath="$PROJECT_DIR$/arm-work/arm-work.iml" />
       <module fileurl="file://$PROJECT_DIR$/es/es.iml" filepath="$PROJECT_DIR$/es/es.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-parent/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/springcloud-parent/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/layui/layui.iml" filepath="$PROJECT_DIR$/layui/layui.iml" />
       <module fileurl="file://$PROJECT_DIR$/log/log.iml" filepath="$PROJECT_DIR$/log/log.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis01-demo01-crud/mybatis01-demo01-crud.iml" filepath="$PROJECT_DIR$/mybatis01-demo01-crud/mybatis01-demo01-crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mq/springboot-mq.iml" filepath="$PROJECT_DIR$/springboot-mq/springboot-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mysql-redis/springboot-mysql-mybatis/springboot-mysql-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mysql-redis/springboot-mysql-mybatis/springboot-mysql-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot1/springboot1.iml" filepath="$PROJECT_DIR$/springboot1/springboot1.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot2/springboot2.iml" filepath="$PROJECT_DIR$/springboot2/springboot2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-parent/springcloud-parent.iml" filepath="$PROJECT_DIR$/springcloud-parent/springcloud-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday01-demo01-start/springday01-demo01-start.iml" filepath="$PROJECT_DIR$/springday01-demo01-start/springday01-demo01-start.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday01-demo02-ioc/springday01-demo02-ioc.iml" filepath="$PROJECT_DIR$/springday01-demo02-ioc/springday01-demo02-ioc.iml" />
       <module fileurl="file://$PROJECT_DIR$/springday02-demo01-dbutils/springday02-demo01-dbutils.iml" filepath="$PROJECT_DIR$/springday02-demo01-dbutils/springday02-demo01-dbutils.iml" />
@@ -25,6 +29,9 @@
       <module fileurl="file://$PROJECT_DIR$/ssm/ssm.iml" filepath="$PROJECT_DIR$/ssm/ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssm-work/ssm-work.iml" filepath="$PROJECT_DIR$/ssm-work/ssm-work.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-parent/user-consumer/user-consumer.iml" filepath="$PROJECT_DIR$/springcloud-parent/user-consumer/user-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-parent/user-provide/user-provide.iml" filepath="$PROJECT_DIR$/springcloud-parent/user-provide/user-provide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-parent/user-provide2/user-provide2.iml" filepath="$PROJECT_DIR$/springcloud-parent/user-provide2/user-provide2.iml" />
     </modules>
   </component>
 </project>
