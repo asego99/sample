@@ -10,21 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26ae297d-d5ed-407a-9a34-f05c154b11ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_reactive_streams_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_hystrix_2_1_1_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springcloud-parent/user-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springcloud-parent/user-consumer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/UserConsumerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/UserConsumerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/feign/UserFeign.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springcloud-parent/user-consumer/src/main/java/com/xxx/feign/impl/FallbackImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -943,7 +929,7 @@
       <workItem from="1661495668300" duration="6820000" />
       <workItem from="1661511092333" duration="3789000" />
       <workItem from="1661563942264" duration="18186000" />
-      <workItem from="1661731632638" duration="17774000" />
+      <workItem from="1661731632638" duration="18778000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1660728156677</created>
@@ -1036,7 +1022,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661758303503</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit">
+      <created>1661758842563</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661758842563</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
