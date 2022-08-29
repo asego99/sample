@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean class="com.xxx.factory.StaticFactory" factory-method="getObject" id="accountService">-->
+<!--        <property name="accountDao" ref="accountDao"></property>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.xxx.service.impl.AccountServiceImpl" id="accountService">-->
+<!--        <property name="accountDao" ref="accountDao"/>-->
+<!--        <property name="name" value="fbb"/>-->
+<!--        <property name="age" value="19"/>-->
+<!--        <property name="date" ref="date"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.xxx.dao.impl.AccountDaoImpl" id="accountDao"></bean>-->
+<!--    <bean class="java.util.Date" id="date" />-->
+
+<!--    <bean class="com.xxx.service.impl.AccountServiceImpl" id="accountService">-->
+<!--        <constructor-arg name="accountDao" ref="accountDao"/>-->
+<!--        <constructor-arg name="name" value="fbb"/>-->
+<!--        <constructor-arg name="age" value="19"/>-->
+<!--        <constructor-arg name="date" ref="date"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.xxx.service.impl.AccountServiceImpl" id="accountService">-->
+<!--        <constructor-arg index="0" ref="accountDao"/>-->
+<!--        <constructor-arg index="1" value="fbb"/>-->
+<!--        <constructor-arg index="2" value="19"/>-->
+<!--        <constructor-arg index="3" ref="date"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.xxx.service.impl.AccountServiceImpl" id="accountService">-->
+<!--        <constructor-arg type="com.xxx.dao.AccountDao" ref="accountDao"/>-->
+<!--        <constructor-arg type="java.lang.String" value="fbb"/>-->
+<!--        <constructor-arg type="java.lang.Integer" value="19"/>-->
+<!--        <constructor-arg type="java.util.Date" ref="date"/>-->
+<!--    </bean>-->
+
+    <bean class="com.xxx.service.impl.AccountServiceImpl" id="accountService">
+        <property name="myStrs">
+            <array>
+                <value>fbb</value>
+                <value>lbb</value>
+            </array>
+        </property>
+        <property name="myList">
+            <array>
+                <value>fbb2</value>
+                <value>lbb2</value>
+            </array>
+        </property>
+        <property name="mySet">
+            <array>
+                <value>fbb3</value>
+                <value>lbb3</value>
+            </array>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="fbb" value="lic"></entry>
+                <entry key="lbb" value="fed"></entry>
+            </map>
+        </property>
+
+<!--        <property name="myMap">-->
+<!--            <map>-->
+<!--                <entry key="fbb4">-->
+<!--                    <value>lic4</value>-->
+<!--                </entry>-->
+<!--                <entry key="lbb4">-->
+<!--                    <value>fed4</value>-->
+<!--                </entry>-->
+<!--            </map>-->
+<!--        </property>-->
+
+        <property name="myProps">
+            <map>
+                <entry key="fbb2" value="lic2"></entry>
+                <entry key="lbb2" value="fed2"></entry>
+            </map>
+        </property>
+<!--        <property name="myProps">-->
+<!--            <props>-->
+<!--                <prop key="fbb3">lic3</prop>-->
+<!--                <prop key="lbb3">fed3</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+    </bean>
+
+</beans>

@@ -1,0 +1,19 @@
+server:
+  port: 18801
+  servlet:
+    context-path: /sb1
+
+user:
+  username: fbb
+  address: sz
+  nikename:
+    - gd
+    - gdd
+  mobiles:
+    - num: 1
+      brand: xm
+    - num: 2
+      brand: hw
+  map:
+    k: v
+    k2: v2
